@@ -7,50 +7,31 @@ import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.unit.dp
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.ui.Modifier
-import androidx.compose.foundation.text.KeyboardOptions
-import androidx.compose.ui.text.input.TextFieldValue
-import androidx.compose.ui.text.input.VisualTransformation
-import androidx.compose.ui.Alignment
-import androidx.compose.ui.draw.clip
+import androidx.compose.ui.unit.dp
+import com.example.weatherapp.presentation.theme.ui.Input
+import com.example.weatherapp.presentation.theme.ui.MainCard
+import com.example.weatherapp.presentation.theme.ui.BackgroundImageScreen
+
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            input()
-        }
-    }
-    @Composable
-    fun input() {
-        Column(
-            modifier = Modifier
-                .fillMaxSize()
-                .padding(14.dp)
-        ) {
-            var inputText = ""
-            Box(
-                modifier = Modifier.fillMaxWidth()
-            ) {
-                TextField(
+            Box(modifier = Modifier.fillMaxSize()) {
+                BackgroundImageScreen() // Вызов фонового изображения
+
+                Column(
                     modifier = Modifier
-                        .fillMaxWidth()
-                        .clip(RoundedCornerShape(12.dp)),
-                    value = inputText,
-                    onValueChange = { inputText = it },
-                    label = { Text("Введите ваш город") },
-                    trailingIcon = {
-                        Button(onClick = {
-                            Toast.makeText(this@MainActivity, "Вы ввели: $inputText", Toast.LENGTH_SHORT).show()
-                        }) {
-                            Text("Отправить")
-                        }
-                    }
-                )
+                        .fillMaxSize()
+                        .padding(16.dp) // Отступы для элементов UI
+                ) {
+                    Input()
+                    MainCard()
+                }
             }
         }
     }
