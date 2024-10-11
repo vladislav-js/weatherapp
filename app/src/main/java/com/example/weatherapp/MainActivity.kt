@@ -14,6 +14,7 @@ import androidx.compose.ui.unit.dp
 import com.example.weatherapp.presentation.theme.ui.Input
 import com.example.weatherapp.presentation.theme.ui.MainCard
 import com.example.weatherapp.presentation.theme.ui.BackgroundImageScreen
+import com.example.weatherapp.data.WeatherApiConnection
 
 
 class MainActivity : ComponentActivity() {
@@ -21,6 +22,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
+            WeatherApiConnection("London")
             Box(modifier = Modifier.fillMaxSize()) {
                 BackgroundImageScreen() // Вызов фонового изображения
 

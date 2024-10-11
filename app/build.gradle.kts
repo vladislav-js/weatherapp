@@ -56,15 +56,14 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
-    // https://mvnrepository.com/artifact/com.squareup.retrofit2/retrofit
-    implementation("com.squareup.retrofit2:retrofit:2.11.0")
-    // https://mvnrepository.com/artifact/com.google.code.gson/gson
-    implementation("com.google.code.gson:gson:2.11.0")
-    // https://mvnrepository.com/artifact/com.squareup.picasso3/picasso
-    implementation("com.squareup.picasso3:picasso:3.0.0-alpha06")
-    // https://mvnrepository.com/artifact/com.google.android.material/material
-    runtimeOnly("com.google.android.material:material:1.12.0")
-    implementation ("androidx.navigation:navigation-compose:2.5.3")
-    implementation ("androidx.navigation:navigation-compose:2.6.0")
-    implementation ("androidx.appcompat:appcompat:1.5.0")
+    implementation(libs.retrofit)
+    implementation(libs.gson)
+    implementation(libs.picasso)
+    runtimeOnly(libs.material)
+    implementation (libs.androidx.navigation.compose.v253)
+    implementation (libs.navigation.compose)
+    implementation (libs.androidx.appcompat)
+    implementation (libs.volley)
+
+
 }
