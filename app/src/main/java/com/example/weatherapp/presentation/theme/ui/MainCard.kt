@@ -34,7 +34,7 @@ fun MainCard() {
                 .height(300.dp),
             elevation = CardDefaults.elevatedCardElevation(10.dp),
             shape = RoundedCornerShape(16.dp),
-            colors = CardDefaults.cardColors(containerColor = Color.Gray)
+            colors = CardDefaults.cardColors(containerColor = Color.White)
         ) {
             Text(
                 text = "Hello world",

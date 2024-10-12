@@ -16,8 +16,7 @@ class WeatherApiConnection(private val city: String) {
         queue = Volley.newRequestQueue(context)
     }
 
-    private val url = "https://api.weatherapi.com/v1/" +
-            "forecast.json" +
+    private val url = "https://api.weatherapi.com/v1/forecast.json" +
             "?key=$API_KEY" +
             "&q=$city" +
             "&days=3" +
@@ -31,10 +30,9 @@ class WeatherApiConnection(private val city: String) {
                 Log.d("MyLog", "Result: $result")
             },
             { error ->
-                Log.d("MyLog", "Error: $error")
+                Log.e("MyLog", "Error: ${error.networkResponse?.statusCode}, Message: ${error.message}, Cause: ${error.cause}")
             }
         )
-
         queue.add(request)
     }
 }

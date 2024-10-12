@@ -11,7 +11,7 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.example.weatherapp.presentation.theme.ui.Input
+import com.example.weatherapp.presentation.theme.ui.CustomTextButton
 import com.example.weatherapp.presentation.theme.ui.MainCard
 import com.example.weatherapp.presentation.theme.ui.BackgroundImageScreen
 import com.example.weatherapp.data.WeatherApiConnection
@@ -22,16 +22,23 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            WeatherApiConnection("London")
+
+            val weatherConnection = WeatherApiConnection("Temirtau")
+            weatherConnection.init(this)
+            weatherConnection.fetchWeather()
             Box(modifier = Modifier.fillMaxSize()) {
-                BackgroundImageScreen() // Вызов фонового изображения
+                BackgroundImageScreen()
 
                 Column(
                     modifier = Modifier
                         .fillMaxSize()
-                        .padding(16.dp) // Отступы для элементов UI
+                        .padding(16.dp)
                 ) {
-                    Input()
+                    Row (
+                        modifier = Modifier.fillMaxWidth(),
+                        horizontalArrangement = Arrangement.Center
+                    ){ CustomTextButton() }
+
                     MainCard()
                 }
             }
