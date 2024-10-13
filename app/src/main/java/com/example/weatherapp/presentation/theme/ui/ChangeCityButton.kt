@@ -20,7 +20,7 @@ import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Button as MaterialButton
 
 @Composable
-fun CustomTextButton() {
+fun CustomTextButton(city: String) {
     var showDialog by remember { mutableStateOf(false) }
 
     Row(horizontalArrangement = Arrangement.Center) {
@@ -32,7 +32,7 @@ fun CustomTextButton() {
             )
         ) {
             Text(
-                text = "Выбрать Город",
+                text = "$city",
                 fontSize = 20.sp,
                 fontWeight = FontWeight.Bold
             )

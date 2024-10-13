@@ -2,6 +2,7 @@ package com.example.weatherapp.data
 
 import android.content.Context
 import android.util.Log
+import androidx.compose.runtime.Composable
 import com.android.volley.Request
 import com.android.volley.RequestQueue
 import com.android.volley.toolbox.StringRequest
@@ -22,15 +23,19 @@ class WeatherApiConnection(private val city: String) {
             "&days=3" +
             "&aqi=no&alerts=no"
 
-    fun fetchWeather() {
+    fun fetchWeather(callback: (WeatherModel) -> Unit) {
         val request = StringRequest(
             Request.Method.GET,
             url,
             { result ->
-                Log.d("MyLog", "Result: $result")
+                val weatherModel = ParseWeatherData(result)
+                callback(weatherModel) // Вызов обратного вызова с результатом
             },
             { error ->
-                Log.e("MyLog", "Error: ${error.networkResponse?.statusCode}, Message: ${error.message}, Cause: ${error.cause}")
+                Log.e(
+                    "MyLog",
+                    "Ошибка: ${error.networkResponse?.statusCode}, Сообщение: ${error.message}, Причина: ${error.cause}"
+                )
             }
         )
         queue.add(request)

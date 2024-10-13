@@ -16,6 +16,7 @@ navigationComposeVersion = "2.8.2"
 picasso = "3.0.0-alpha06"
 retrofit = "2.11.0"
 volley = "1.2.1"
+runtimeLivedata = "1.7.3"
 
 [libraries]
 androidx-appcompat = { module = "androidx.appcompat:appcompat", version.ref = "appcompat" }
@@ -40,6 +41,7 @@ navigation-compose = { module = "androidx.navigation:navigation-compose", versio
 picasso = { module = "com.squareup.picasso3:picasso", version.ref = "picasso" }
 retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
 volley = { module = "com.android.volley:volley", version.ref = "volley" }
+androidx-runtime-livedata = { group = "androidx.compose.runtime", name = "runtime-livedata", version.ref = "runtimeLivedata" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
