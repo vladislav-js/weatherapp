@@ -14,10 +14,10 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.example.weatherapp.presentation.theme.ui.CustomTextButton
-import com.example.weatherapp.presentation.theme.ui.MainCard
-import com.example.weatherapp.presentation.theme.ui.BackgroundImageScreen
-import com.example.weatherapp.viewmodel.WeatherViewModel
+import com.example.weatherapp.presentation.ui.CustomTextButton
+import com.example.weatherapp.presentation.ui.MainCard
+import com.example.weatherapp.presentation.ui.BackgroundImageScreen
+import com.example.weatherapp.presentation.ui.WeatherViewModel
 
 class MainActivity : ComponentActivity() {
     private val weatherViewModel: WeatherViewModel by viewModels()

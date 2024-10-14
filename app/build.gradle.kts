@@ -13,7 +13,7 @@ android {
         minSdk = 24
         targetSdk = 34
         versionCode = 1
-        versionName = "1.0"
+        versionName = "1.1"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -65,6 +65,9 @@ dependencies {
     implementation (libs.navigation.compose)
     implementation (libs.androidx.appcompat)
     implementation (libs.volley)
-
+    implementation (libs.accompanist.swiperefresh)
+    implementation (libs.androidx.material)
+    implementation (libs.androidx.foundation)
+    implementation (libs.androidx.lifecycle.runtime.ktx.v231)
 
 }

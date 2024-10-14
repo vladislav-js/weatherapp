@@ -12,6 +12,10 @@ fun ParseWeatherData(result: String): WeatherModel {
     val firstDay = mainObject.getJSONObject("forecast").getJSONArray("forecastday").getJSONObject(0)
     val date = firstDay.getString("date")
 
+    Log.d ("MyLog", "Current Temperature $currentTemp")
+    Log.d ("MyLog", "Description: $description")
+    Log.d ("MyLog", "FirstDay: $firstDay")
+    Log.d ("MyLog", "Date: $date")
 
     return WeatherModel(currentTemp, description, date)
 }
